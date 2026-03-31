@@ -1,0 +1,57 @@
+<dialog id="contact_modal" class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg mb-4">Add New Contact</h3>
+    
+        <form class="mb-4" hx-encoding="multipart/form-data" hx-target="#contact-table-body" hx-swap="afterbegin" hx-on:success="contact_modal.close(); this.reset();" hx-post="{% url 'create-contact' %}">
+            {% csrf_token %}
+            {% comment %} name {% endcomment %}
+            <div class="form-control w-full">
+            <label for="" class="label">
+                <span class="label-text">Name</span>
+            </label>
+            {{form.name}}
+
+            {% if form.name.errors %}
+                <label for="" class="label text-error">
+                {{form.name.errors}}
+                </label>
+            {% endif %}
+            </div>
+
+            {% comment %} email {% endcomment %}
+            <div class="form-control w-full">
+            <label for="" class="label">
+                <span class="label-text">Email</span>
+            </label>
+            {{form.email}}
+
+            {% if form.email.errors %}
+                <label for="" class="label text-error">
+                {{form.email.errors}}
+                </label>
+            {% endif %}
+            </div>
+
+            {% comment %} File {% endcomment %}
+            <div class="form-control w-full">
+            <label for="" class="label">
+                <span class="label-text">Document</span>
+            </label>
+            {{form.document}}
+
+            {% if form.document.errors %}
+                <label for="" class="label text-error">
+                {{form.document.errors}}
+                </label>
+            {% endif %}
+            </div>
+
+
+            <div class="modal-action">
+                <button type="button" onClick="contact_modal.close()" class="btn">Cancel</button>
+                <button type="submit" class="btn btn-primary">Add Contact</button>    
+            </div>
+        </form>
+    
+  </div>
+</dialog>

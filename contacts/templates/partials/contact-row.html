@@ -1,0 +1,16 @@
+<!-- this partial created for add a new row in contact list after contact was created -->
+<tr>
+  <td>{{contact.name}}</td>
+  <td>{{contact.email}}</td>
+  <td>
+    {% if contact.document %}
+      <a href="{{ contact.document.url }}" class="btn btn-ghost btn-xs" target="_blank">Download Document</a>
+      {% else %}
+        <span class="text-red-500">No document</span>
+    {% endif %}
+  </td>
+  <td>{{contact.created_at|date:"M d, Y"}}</td>
+  <td>
+    <button class="btn btn-xs btn-error">Delete</button>
+  </td>
+</tr>
