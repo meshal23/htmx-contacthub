@@ -121,4 +121,6 @@
   - SECRET_KEY, DEBUG = True, ALLOWED_HOSTS = [] (go to adding basic security in render docs)
   - build the build script (go to deploying to render section)
   - go to create build script section --> create build.sh file in root folder and paste the code
+  - there are 2 ways to deploy define render.yaml(best)/ manually define on render dashboard
+  - create render.yaml, paste the code
 
