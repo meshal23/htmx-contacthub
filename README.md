@@ -123,4 +123,5 @@
   - go to create build script section --> create build.sh file in root folder and paste the code
   - there are 2 ways to deploy define render.yaml(best)/ manually define on render dashboard
   - create render.yaml, paste the code
+  - we do the settings in our render dashboard (see video)
 
